@@ -1,1 +1,25 @@
-Login
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Personal Budget - Budget Management App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+<body>
+
+    <div class="container">
+        <!-- This is a11y Change -->
+        <h1>Login</h1>
+        <form action="login_process.php" method="POST"> 
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <!-- This is a11y Change --> 
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,117 @@
+
+header {
+    background-color: #333;
+    color: #fff; 
+    padding: 10px 0; 
+    text-align: center; 
+}
+
+
+header .menu ul {
+    list-style: none; 
+    padding: 0;
+}
+img{
+    width: 500px;
+    margin: auto;
+    display: block;
+    height: auto;
+    border : 2px solid #333;
+}
+header .menu li {
+    display: inline; 
+    margin-right: 20px; 
+}
+
+header .menu a {
+    text-decoration: none; 
+    color: #fff; 
+    font-weight: bold; 
+}
+
+header .menu a:hover {
+    text-decoration: underline; 
+}
+ 
+
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+.hero {
+    text-align: center;
+    padding: 40px;
+}
+
+.hero h1 {
+    font-size: 36px;
+}
+
+.hero h2 {
+    font-size: 24px;
+    color: #666;
+}
+.container {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+.text-box {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.text-box h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.text-box p {
+    font-size: 16px;
+    color: #333;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+a {
+    color: #007bff;
+}
+
+a:hover {
+    text-decoration: underline;
+}
