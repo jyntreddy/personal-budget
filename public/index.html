@@ -18,7 +18,6 @@
             </ul>
         </div><!-- This is a Semantic HTML Change -->
     </header> 
-
     <img src="bg.png" class="img" alt="Manage your personal budget with our budget management app"><!-- This is an SEO Change -->
 
     <div class="hero">
@@ -46,7 +45,6 @@
                     What if your clothing budget ended? You will get an alert. The goal is to never go over the budget.
                 </p>
             </article><!-- This is a Semantic HTML Change -->
-    
             <div class="text-box">
                 <h1>Results</h1>
                 <p>
@@ -71,7 +69,6 @@
                     app will help you with that!
                 </p>
             </div>
-    
             <div class="text-box">
                 <h1>Alerts</h1>
                 <p>
@@ -91,7 +88,7 @@
             <div class="text-box">
                 <h1>Free</h1>
                 <p>
-                    This app is free!!! And you are the only one holding your data!
+                    <canvas id="myChart" width="100" height="100"></canvas>
                 </p>
             </div>
 
@@ -104,6 +101,47 @@
             All rights reserved &copy; 
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.0/axios.min.js" integrity="sha512-aoTNnqZcT8B4AmeCFmiSnDlc4Nj/KPaZyB5G7JnOnUEkdNpCZs1LCankiYi01sLTyWy+m2P+W4XM+BuQ3Q4/Dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>      
+    <script>
+        var dataSource = {
+            datasets:[
+                {
+                    data: [30, 350, 90],
+                    backgroundColor: [
+                        '#ffcd56',
+                        '#ff6384',
+                        '#36a2eb',
+                        '#fd6b19',
+                    ],
+                }
+            ],
+            labels: [
+                'Eat Out',
+                'Rent',
+                'Groceries'
+            ]
+        };
 
+        function createChart(){
+            var ctx = document.getElementById("myChart").getContext("2d");
+            var myPieChart = new Chart(ctx, {
+                type: 'pie',
+                data: dataSource
+            });
+        }
+        function getBudget() {
+            axios.get('/budget')
+            .then(function(res){
+                console.log(res);
+                for (var i=0; i<res.data.myBudget.length; i++){
+                    dataSource.datasets[0].data[i] = res.data.myBudget[i].budget;
+                    dataSource.labels[i] = res.data.myBudget[i].title;
+                }
+                createChart();
+            });
+        }
+        getBudget();
+    </script>
 </body>
 </html>
